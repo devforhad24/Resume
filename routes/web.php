@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\TestimonialControlller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,6 +55,13 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::post('/admin/update-service/{id}', [ServicesController::class, 'updateService'])->name('update.service');
     Route::get('/admin/delete-service/{id}', [ServicesController::class, 'deleteService'])->name('delete.service');
     Route::get('/change-status/{id}', [ServicesController::class, 'changeStatus'])->name('change.status');
+
+    Route::get('/admin/testimonials', [TestimonialControlller::class, 'allTestimonials'])->name('testimonials');
+    Route::get('/admin/add-testimonial', [TestimonialControlller::class, 'addTestimonial'])->name('add.testimonial');
+    Route::post('/admin/store-testimonial', [TestimonialControlller::class, 'storeTestimonial'])->name('store.testimonial');
+    Route::get('/admin/edit-testimonial/{id}', [TestimonialControlller::class, 'editTestimonial'])->name('edit.testimonial');
+    Route::post('/admin/update-testimonial/{id}', [TestimonialControlller::class, 'updateTestimonial'])->name('update.testimonial');
+    Route::get('/admin/delete-testimonial/{id}', [TestimonialControlller::class, 'deleteTestimonial'])->name('delete.testimonial');
 
 }); // end group admin middleware
 

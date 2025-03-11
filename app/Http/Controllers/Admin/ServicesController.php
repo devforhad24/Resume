@@ -74,7 +74,10 @@ class ServicesController extends Controller
         $imageName = $service->image;
         if($image = $request->file('image')){
             $imageName = time().'.'.$image->extension();
-            $image->move(('public/backend/services'),$imageName);
+            // $image->move(('public/backend/services'),$imageName);
+            // Resize Image
+            $new_image = Image::make($image);
+            $new_image->resize(68,68)->save(('public/backend/services/' .$imageName));
         }
 
         $service->update([

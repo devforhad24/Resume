@@ -46,10 +46,10 @@
           <div class="collapse" id="emailsx">
             <ul class="nav sub-menu">
               <li class="nav-item">
-                <a href="" class="nav-link">Testimonials</a>
+                <a href="{{ route('testimonials') }}" class="nav-link">Testimonials</a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">Add Service</a>
+                <a href="{{ route('add.testimonial') }}" class="nav-link">Add Testimonial</a>
               </li>
             </ul>
           </div>
