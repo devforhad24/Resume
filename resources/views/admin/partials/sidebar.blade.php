@@ -38,6 +38,24 @@
         </li>
 
         <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#emailsx" role="button" aria-expanded="false" aria-controls="emailsx">
+            <i class="link-icon" data-feather="mail"></i>
+            <span class="link-title">Testimonial</span>
+            <i class="link-arrow" data-feather="chevron-down"></i>
+          </a>
+          <div class="collapse" id="emailsx">
+            <ul class="nav sub-menu">
+              <li class="nav-item">
+                <a href="" class="nav-link">Testimonials</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Add Service</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
           <a href="pages/apps/calendar.html" class="nav-link">
             <i class="link-icon" data-feather="calendar"></i>
             <span class="link-title">Calendar</span>

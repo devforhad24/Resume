@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 
 class ServicesController extends Controller
 {
@@ -33,7 +34,11 @@ class ServicesController extends Controller
         $imageName = '';
         if($image = $request->file('image')){
             $imageName = time().'.'.$image->extension();
-            $image->move(('public/backend/services'),$imageName);
+            // $image->move(('public/backend/services'),$imageName);
+            // Resize Image
+            $new_image = Image::make($image);
+            $new_image->resize(68,68)->save(('public/backend/services/' .$imageName));
+
         }
 
         Service::create([
